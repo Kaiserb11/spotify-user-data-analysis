@@ -8,7 +8,7 @@ I have used 3 different machine learning classification techniques and applied t
 
 # dataset
 - [Spotify user data](https://www.kaggle.com/geomack/spotifyclassification)
-(already included in the repo as <b>spotify.csv</b>)
+
  
 # REQUIREMENTS 
 - Sk learn (pip install sklearn)
