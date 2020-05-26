@@ -16,14 +16,15 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y
 try:
     pickle_in = open("KNN.pickle", "rb")
     model = pickle.load(pickle_in)
-    print("hi")
+    
 
 except:
     model = neighbors.KNeighborsClassifier(n_neighbors=6)
+    model.fit(x_train, y_train)
     with open("KNN.pickle", "wb") as f:
         pickle.dump(model, f)
-    print("yo")
-model.fit(x_train, y_train)
+    
+
 
 acc = model.score(x_test, y_test)
 
