@@ -16,13 +16,13 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(X, Y
 try:
     pickle_in  =open("SVM.pickle", "rb" )
     clf = pickle.load(pickle_in)
-    print("hi")
+    
 except:
     clf = svm.SVC(kernel="linear")
+    clf.fit(x_train, y_train)
     with open("SVM.pickle", "wb") as f:
         pickle.dump(clf, f)
-    print("yo")
-clf.fit(x_train, y_train)
+
 
 y_pred = clf.predict(x_test)
 
